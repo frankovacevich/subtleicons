@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<link href="https://fonts.googleapis.com/css2?family=Maven+Pro&family=Open+Sans&display=swap" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<link rel="stylesheet" type="text/css" href="website/style.css">
+<link rel="shortcut icon" href="icons/subtle.svg">
+<body>
+
+<div ng-app="iconApp" ng-controller="ctrl" style="padding:100px; padding-top: 0; box-sizing: border-box;">
+
+  <div style="height:100vh; display: flex; flex-direction: column; justify-content: center">
+    <div style="margin-bottom:auto"></div>
+		<h1>Subtle Icons</h1>
+
+		<div>
+			<h2><span id="icons_count"></span>Free scalable vector icons for IoT and web development</h2>
+		</div>
+
+    <div>
+  		<div class="button" onclick="window.location='https://github.com/frankovacevich/subtleicons'"><img src="https://github.githubassets.com/favicons/favicon.png" />Readme</div>
+  		<div class="button" onclick="window.location='css-font.zip.tar.gz'"><img src="icons/arrows/push-down.svg"/>Download font</div>
+  		<div class="button" onclick="window.location='icons.tar.gz'"><img src="icons/arrows/push-down.svg"/>Download svgs</div>
+    </div>
+
+    <div style="text-align: center; margin-top: auto; margin-bottom: 50px; width:100%">
+      <img src="icons/arrows/chevron-down.svg" style="width:64px; cursor: pointer" onclick="document.getElementById('top-bar').scrollIntoView();">
+    </div>
+	</div>
+
+  <div id="top-bar" style="display: flex; flex-wrap: wrap; align-items: stretch; padding-top: 100px;">
+		<div style="flex-grow: 1; min-width: 200px; margin: 5px">
+
+			<div style="display:flex;">
+				<span class="selector l" ng-click="change_icons_size('16px')" style="background-color: {{icon_size == '16px' ? '#5bbadcff' : 'transparent'}}">16px</span>
+				<span class="selector" ng-click="change_icons_size('20px')" style="background-color: {{icon_size == '20px' ? '#5bbadcff' : 'transparent'}}">20px</span>
+				<span class="selector" ng-click="change_icons_size('24px')" style="background-color: {{icon_size == '24px' ? '#5bbadcff' : 'transparent'}}">24px</span>
+				<span class="selector" ng-click="change_icons_size('32px')" style="background-color: {{icon_size == '32px' ? '#5bbadcff' : 'transparent'}}">32px</span>
+				<span class="selector" ng-click="change_icons_size('48px')" style="background-color: {{icon_size == '48px' ? '#5bbadcff' : 'transparent'}}">48px</span>
+				<span class="selector r" ng-click="change_icons_size('64px')" style="background-color: {{icon_size == '64px' ? '#5bbadcff' : 'transparent'}}">64px</span>
+			</div>
+
+		</div>
+		<div style="flex-grow: 3; min-width: 200px; margin: 5px;">
+			<input type="text" placeholder="Search" ng-model="search_text" style="width: 100%; background-image: url('icons/symbols/search-2.svg');" />
+		</div>
+	</div>
+
+  <div id="main-container">
+    <div class='icon tooltip' ng-repeat="ic in icons | filter: {name:search_text}" ng-click="open(ic.path)">
+      <img src='{{ic.path}}' style="height:{{icon_size}}; width:{{icon_size}}"><span class='tooltiptext'>{{ic.name}}</span>
+    </div>
+  </div>
+
+</div>
+
+</body>
+
+<script src="website/icons.js"></script>
+<script>
+
+var app = angular.module("iconApp", []);
+
+app.controller("ctrl", function($scope) {
+  $scope.icon_size = "20px";
+  $scope.icons = ICONS;
+
+  $scope.change_icons_size = function(size) { $scope.icon_size = size; }
+  $scope.open = function(url) { window.location = url; }
+
+});
+
+</script>
+
+</html>

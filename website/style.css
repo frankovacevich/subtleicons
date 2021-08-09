@@ -1,0 +1,157 @@
+html{ margin:0; padding: 0; }
+body{margin:0; padding: 0; font-family: 'Arial'; font-size: 13px; }
+
+h1{ font-family: 'Maven Pro', sans-serif; font-size: 60px; }
+h2{ font-family: 'Maven Pro', sans-serif; font-size: 30px; }
+h3{ font-family: 'Maven Pro', sans-serif; font-size: 30px; }
+
+p{ font-family: 'Maven Pro', sans-serif; font-size: 16px; }
+
+.icon{
+	display: inline-block;
+	padding: 16px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.icon:hover{
+	background-color: #5bbadc55;
+}
+
+.icon img{
+	height: 32px;
+	width: 32px;
+}
+
+.icon img.spin{
+	-webkit-animation:spin 1s linear infinite;
+	-moz-animation:spin 1s linear infinite;
+	animation:spin 1s linear infinite;
+}
+
+.selector{
+	display: inline-block;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+	padding: 10px 10px;
+	margin: 0;
+	cursor: pointer;
+	flex-grow: 1;
+	text-align: center;
+}
+
+.selector.l{
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;
+	border-left: 1px solid black;
+}
+
+.selector.r{
+	border-top-right-radius: 20px;
+	border-bottom-right-radius: 20px;
+	border-right: 1px solid black;
+}
+
+.selector:hover{
+	background-color: #5bbadc55;
+}
+
+.button{
+	padding: 10px 20px;
+	border-radius: 20px;
+	margin: 0;
+	cursor: pointer;
+	display: inline-block;
+	border: 1px solid black;
+}
+
+input[type=text]{
+	padding: 8px 20px;
+	padding-left: 30px;
+	border-radius: 20px;
+	margin: 0;
+	display: inline-block;
+	border: 1px solid black;
+	box-sizing: border-box;
+	background-position: 10px 10px;
+		background-repeat: no-repeat;
+}
+input:focus, textarea:focus, select:focus{
+	outline: none;
+}
+
+.button img{
+	height: 16px;
+	margin-right: 10px;
+}
+
+img{ vertical-align: middle; }
+
+.button:hover{
+	background-color: #5bbadc55;
+}
+
+.tooltip {
+	position: relative;
+	display: inline-block;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+	visibility: hidden;
+	width: 120px;
+	top: 100%;
+	left: 50%;
+	margin-left: -60px; /* Use half of the width (120/2 = 60), to center the tooltip */
+	background-color: black;
+	color: #fff;
+	text-align: center;
+	padding: 5px 0;
+	border-radius: 6px;
+	border: 2px solid white;
+
+	/* Position the tooltip text - see examples below! */
+	position: absolute;
+	z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+	visibility: visible;
+}
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+.modal_fs{
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: white;
+	padding: 100px;
+	z-index: 999;
+	box-sizing: border-box;
+	display: none;
+}
+
+.modal_close{
+	position: absolute;
+	right: 100px;
+	top: 100px;
+	cursor: pointer;
+}
+
+.code{
+	font-family: monospace;
+	font-size: 14px;
+	background-color: #121212;
+	border-radius: 10px;
+	padding: 10px;
+	box-sizing: border-box;
+	width: 100%;
+	color: white;
+}
