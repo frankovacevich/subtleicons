@@ -7,3 +7,5 @@ You can use the icons independently as SVGs or download the font version to incl
 them easily into CSS. The font was built using [icomoon.io](https://icomoon.io/)
 
 The icons are licensed under the MIT License and are free to use in any project.
+
+Check the website to view and search throught the icons. 
