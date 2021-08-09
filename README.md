@@ -8,4 +8,4 @@ them easily into CSS. The font was built using [icomoon.io](https://icomoon.io/)
 
 The icons are licensed under the MIT License and are free to use in any project.
 
-Check the website to view and search throught the icons. 
+Check the website (built with AngularJS) to view and search through the icons. 
